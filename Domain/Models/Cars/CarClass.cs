@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Cars
+namespace Domain.Models.Cars
 {
     public enum CarClass
     {
