@@ -2,12 +2,12 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain.Models.Cars;
 using System.Drawing;
-using Domain;
+using Domain.Models;
 
 namespace Test
 {
     [TestClass]
-    public class DomainUnitTest
+    public class CarAggregateUnitTest
     {
         private Car car;
 
@@ -33,8 +33,7 @@ namespace Test
         [ExpectedException(typeof(ArgumentNullException))]
         public void CarAggregate_Name_Is_Null_ThrowsException()
         {
-            Car nullNameCar = new Car("1", CarClass.Normal, null, Color.Gray, 240, 5);
-            Assert.IsNotNull(nullNameCar);
+            Car nullNameCar = new Car("1", CarClass.Normal, null, Color.Gray, 240, 5);            
         }
 
         [TestMethod, TestCategory("Unit")]
