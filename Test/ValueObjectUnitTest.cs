@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Domain.Models.Cars;
+using Domain.Cars;
 using System.Drawing;
 using Domain;
 

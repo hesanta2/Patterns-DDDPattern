@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace Domain.Models.Cars
+namespace Domain.Cars
 {
     public class CarType : ValueObject<CarType>
     {

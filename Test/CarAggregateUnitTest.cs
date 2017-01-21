@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Domain.Models.Cars;
 using System.Drawing;
-using Domain.Models;
+using Domain;
+using Domain.Cars;
 
 namespace Test
 {

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using Domain.Models;
-using Domain.Models.Cars;
+using Domain;
+using Domain.Cars;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Domain.Services;
 using Infraesctructure.Repositories;
 using Rhino.Mocks;
 
@@ -40,7 +39,7 @@ namespace Test
                 new Car("3", CarClass.Normal, "Car3", Color.Blue, 200, 5)
             }.AsQueryable();
 
-            this.carRepository.Expect(r => r.Get(null)).IgnoreArguments().Return(returns);
+            this.carRepository.Expect(r => r.Get("Car")).Return(returns);
 
             IQueryable<Car> result = new CarService(carRepository).GetByName("Car");
 

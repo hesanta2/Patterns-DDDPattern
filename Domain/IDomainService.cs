@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
-namespace Domain.Models
+namespace Domain
 {
-    public interface IAggregateRoot
+    public interface IDomainService<T> where T : IAggregateRoot
     {
-        string Id { get; }
     }
 }

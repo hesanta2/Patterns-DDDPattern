@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Models.Cars
+namespace Domain.Cars
 {
-    public interface ICarRepository : IRepository<Car>
+    public enum CarClass
     {
+        Normal,
+        Sport,
+        Competition
     }
 }
