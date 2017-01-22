@@ -14,24 +14,72 @@ namespace Console
     {
         static void Main(string[] args)
         {
-            Application.Cars.ICarService carService = 
+            Random random = new Random((int)DateTime.Now.Ticks);
+            Application.Cars.ICarService carService =
                 UnityConfigurator.UnityContainer.Resolve<ICarService>();
 
-            string readerLine = "";
-            while (readerLine.ToLower() != "exit")
+            ConsoleKey consoleKey = ConsoleKey.A;
+            while (consoleKey != ConsoleKey.Escape)
             {
-                System.Console.Write("\nWrite the car name to find (exit to leave): ");
-                readerLine = System.Console.ReadLine();
+                System.Console.Write(@"
+- Car Searcher -
+    1. Search
+    2. Add (random)
+    3. Remove
+    Esc to exit
+
+  Write number option: ");
+                consoleKey = System.Console.ReadKey().Key;
+                System.Console.Clear();
+                string readerLine = null;
+                while (true)
+                {
+                    IQueryable<Car> cars = null;
+
+                    switch (consoleKey)
+                    {
+                        case ConsoleKey.D1:
+                            System.Console.Write("\nWrite the car name to find (blank to show all, exit to leave): ");
+                            readerLine = System.Console.ReadLine();
+                            cars = carService.GetByName(readerLine);
+                            break;
+                        case ConsoleKey.D2:
+                            System.Console.Write("\nWrite the car name to create random one (blank to show all, exit to leave): ");
+                            readerLine = System.Console.ReadLine();
+                            if (!string.IsNullOrWhiteSpace(readerLine)
+                                && readerLine.ToLower() != "exit")
+                                carService.Insert(
+                                                    new Car(null,
+                                                    (CarClass)random.Next(2),
+                                                    readerLine,
+                                                    random.Next(150, 370),
+                                                    random.Next(0, 5))
+                                                );
+                            cars = carService.GetByName("");
+                            break;
+                        case ConsoleKey.D3:
+                            System.Console.Write("\nWrite the car Id to remove (blank to show all, exit to leave): ");
+                            readerLine = System.Console.ReadLine();
+                            if (!string.IsNullOrWhiteSpace(readerLine)
+                                && readerLine.ToLower() != "exit")
+                                carService.Delete(readerLine);
+                            cars = carService.GetByName("");
+                            break;
+                    }
+
+                    if (readerLine == null
+                        || readerLine.ToLower() == "exit")
+                        break;
+
+                    System.Console.WriteLine();
+                    foreach (var car in cars)
+                        System.Console.WriteLine($"Car ({car.Id}): {car}");
+                    System.Console.WriteLine();
+
+                }
+
                 System.Console.Clear();
 
-                IQueryable<Car> cars = carService.GetByName(readerLine);
-
-                System.Console.WriteLine();
-                foreach (var car in cars)
-                {
-                    System.Console.WriteLine($"Car ({car.Id}): {car}");
-                }
-                System.Console.WriteLine();
             }
         }
     }

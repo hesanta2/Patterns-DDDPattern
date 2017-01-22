@@ -19,10 +19,27 @@ namespace Domain.Cars
         {
             return this.carRepository.Get
                 (
-                    c=> 
+                    c =>
                     c.CarType.Name.ToLower()
                     .Contains(name.ToLower())
                 );
+        }
+
+        public int GetCount()
+        {
+            return carRepository.GetAll().Count();
+        }
+
+        public void Insert(Car car)
+        {
+            this.carRepository.Insert(car);
+        }
+
+        public void Delete(string readerLine)
+        {
+            Car car = this.carRepository.Find(readerLine);
+            if (car != null)
+                this.carRepository.Delete(car);
         }
     }
 }
