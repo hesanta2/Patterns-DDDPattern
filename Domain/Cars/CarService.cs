@@ -21,11 +21,6 @@ namespace Domain.Cars
                 );
         }
 
-        public int GetCount()
-        {
-            return carRepository.GetAll().Count();
-        }
-
         public void Insert(Car car)
         {
             this.carRepository.Insert(car);

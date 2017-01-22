@@ -23,7 +23,7 @@ namespace Application.Cars
         {
             if (string.IsNullOrWhiteSpace(car.Id))
                 car = new Car(
-                                (carService.GetCount() + 1).ToString()
+                                (carService.GetAll().Count() + 1).ToString()
                                 , car.CarType.Class
                                 , car.CarType.Name
                                 , car.CarType.MaxSpeed
