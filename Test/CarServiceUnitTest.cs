@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Domain;
 using Domain.Cars;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Infraesctructure.Repositories;
 using Rhino.Mocks;
 
 namespace Test

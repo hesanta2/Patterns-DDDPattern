@@ -1,5 +1,4 @@
-﻿using Domain;
-using Domain.Cars;
+﻿using Domain.Cars;
 using Infraesctructure.Repositories;
 using Microsoft.Practices.Unity;
 

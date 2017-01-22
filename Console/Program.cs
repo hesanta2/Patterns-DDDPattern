@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Domain.Cars;
 using Epreselec.Ats.API.Domain;
 using Microsoft.Practices.Unity;

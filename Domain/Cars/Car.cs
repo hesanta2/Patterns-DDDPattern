@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-
-namespace Domain.Cars
+﻿namespace Domain.Cars
 {
     public class Car : IAggregateRoot
     {
