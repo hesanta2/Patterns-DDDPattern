@@ -32,19 +32,24 @@ namespace Console
                 consoleKey = System.Console.ReadKey().Key;
                 System.Console.Clear();
                 string readerLine = null;
+                IQueryable<Car> cars = carService.GetAll();
                 while (true)
                 {
-                    IQueryable<Car> cars = null;
+
+                    System.Console.WriteLine();
+                    foreach (var car in cars)
+                        System.Console.WriteLine($"Car ({car.Id}): {car}");
+                    System.Console.WriteLine();
 
                     switch (consoleKey)
                     {
                         case ConsoleKey.D1:
-                            System.Console.Write("\nWrite the car name to find (blank to show all, exit to leave): ");
+                            System.Console.Write("\nWrite the car name to find ('exit' to leave): ");
                             readerLine = System.Console.ReadLine();
                             cars = carService.GetByName(readerLine);
                             break;
                         case ConsoleKey.D2:
-                            System.Console.Write("\nWrite the car name to create random one (blank to show all, exit to leave): ");
+                            System.Console.Write("\nWrite the car name to create random one ('exit' to leave): ");
                             readerLine = System.Console.ReadLine();
                             if (!string.IsNullOrWhiteSpace(readerLine)
                                 && readerLine.ToLower() != "exit")
@@ -55,27 +60,21 @@ namespace Console
                                                     random.Next(150, 370),
                                                     random.Next(0, 5))
                                                 );
-                            cars = carService.GetByName("");
+                            cars = carService.GetAll();
                             break;
                         case ConsoleKey.D3:
-                            System.Console.Write("\nWrite the car Id to remove (blank to show all, exit to leave): ");
+                            System.Console.Write("\nWrite the car Id to remove ('exit' to leave): ");
                             readerLine = System.Console.ReadLine();
                             if (!string.IsNullOrWhiteSpace(readerLine)
                                 && readerLine.ToLower() != "exit")
                                 carService.Delete(readerLine);
-                            cars = carService.GetByName("");
+                            cars = carService.GetAll();
                             break;
                     }
 
                     if (readerLine == null
                         || readerLine.ToLower() == "exit")
                         break;
-
-                    System.Console.WriteLine();
-                    foreach (var car in cars)
-                        System.Console.WriteLine($"Car ({car.Id}): {car}");
-                    System.Console.WriteLine();
-
                 }
 
                 System.Console.Clear();

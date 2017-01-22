@@ -16,7 +16,7 @@ namespace Domain.Cars
 
         public override string ToString()
         {
-            return $"{this.CarType.Name}: [Class]{CarType.Class}, [Doors]{CarType.Doors}, [MaxVelocity]{CarType.MaxSpeed}";
+            return $"{this.CarType.Name}: [Class]{CarType.Class}, [MaxVelocity]{CarType.MaxSpeed}, [Doors]{CarType.Doors}";
         }
 
     }

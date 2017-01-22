@@ -31,7 +31,7 @@ namespace Application.Cars
                                 , car.CarType.Class
                                 , car.CarType.Name
                                 , car.CarType.MaxSpeed
-                                , car.CarType.MaxSpeed
+                                , car.CarType.Doors
                             );
 
             this.carService.Insert(car);
@@ -40,6 +40,11 @@ namespace Application.Cars
         public void Delete(string readerLine)
         {
             this.carService.Delete(readerLine);
+        }
+
+        public IQueryable<Car> GetAll()
+        {
+            return this.carService.GetAll();
         }
     }
 }

@@ -35,11 +35,16 @@ namespace Domain.Cars
             this.carRepository.Insert(car);
         }
 
-        public void Delete(string readerLine)
+        public void Delete(string id)
         {
-            Car car = this.carRepository.Find(readerLine);
+            Car car = this.carRepository.Find(id);
             if (car != null)
                 this.carRepository.Delete(car);
+        }
+
+        public IQueryable<Car> GetAll()
+        {
+            return this.carRepository.GetAll();
         }
     }
 }

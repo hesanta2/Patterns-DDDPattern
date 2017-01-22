@@ -12,6 +12,7 @@ namespace Domain.Cars
         int GetCount();
         IQueryable<Car> GetByName(string name);
         void Insert(Car car);
-        void Delete(string readerLine);
+        void Delete(string id);
+        IQueryable<Car> GetAll();
     }
 }
