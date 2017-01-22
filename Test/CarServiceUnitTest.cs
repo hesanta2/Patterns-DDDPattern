@@ -39,7 +39,7 @@ namespace Test
                 new Car("3", CarClass.Normal, "Car3", 200, 5)
             }.AsQueryable();
 
-            this.carRepository.Expect(r => r.Get(null)).IgnoreArguments().Return(returns);
+            this.carRepository.Expect(r => r.Get(null)).Return(returns);
 
             IQueryable<Car> result = new CarService(carRepository).GetByName(null);
 
