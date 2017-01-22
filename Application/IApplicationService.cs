@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain;
 
-namespace Domain.Cars
+namespace Application
 {
-    [Flags]
-    public enum CarClass
+    public interface IApplicationService<T> where T : IAggregateRoot
     {
-        Normal,
-        Sport,
-        Competition
     }
 }

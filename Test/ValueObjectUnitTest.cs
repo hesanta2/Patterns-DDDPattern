@@ -16,9 +16,9 @@ namespace Test
         [TestInitialize]
         public void Setup()
         {
-            this.car = new Car("1", CarClass.Normal, "Car", Color.White, 200, 5);
-            this.carCopy = new Car("1", CarClass.Normal, "Car", Color.White, 200, 5);
-            this.car2 = new Car("2", CarClass.Normal, "Car2", Color.White, 200, 5);
+            this.car = new Car("1", CarClass.Normal, "Car", 200, 5);
+            this.carCopy = new Car("1", CarClass.Normal, "Car", 200, 5);
+            this.car2 = new Car("2", CarClass.Normal, "Car2", 200, 5);
         }
 
         [TestMethod]

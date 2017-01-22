@@ -17,7 +17,12 @@ namespace Domain.Cars
 
         public IQueryable<Car> GetByName(string name)
         {
-            return this.carRepository.Get(name);
+            return this.carRepository.Get
+                (
+                    c=> 
+                    c.CarType.Name.ToLower()
+                    .Contains(name.ToLower())
+                );
         }
     }
 }

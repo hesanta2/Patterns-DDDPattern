@@ -34,14 +34,14 @@ namespace Test
         {
             IQueryable<Car> returns = new List<Car>
             {
-                new Car("1", CarClass.Normal, "Car", Color.White, 200, 5),
-                new Car("2", CarClass.Normal, "Car2", Color.Red, 200, 5),
-                new Car("3", CarClass.Normal, "Car3", Color.Blue, 200, 5)
+                new Car("1", CarClass.Normal, "Car", 200, 5),
+                new Car("2", CarClass.Normal, "Car2", 200, 5),
+                new Car("3", CarClass.Normal, "Car3", 200, 5)
             }.AsQueryable();
 
-            this.carRepository.Expect(r => r.Get("Car")).Return(returns);
+            this.carRepository.Expect(r => r.Get(null)).IgnoreArguments().Return(returns);
 
-            IQueryable<Car> result = new CarService(carRepository).GetByName("Car");
+            IQueryable<Car> result = new CarService(carRepository).GetByName(null);
 
             Assert.IsTrue(result.Any());
             this.carRepository.VerifyAllExpectations();

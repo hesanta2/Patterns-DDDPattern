@@ -8,10 +8,15 @@ namespace Domain.Cars
         public string Id { get; protected set; }
         public CarType CarType { get; protected set; }
 
-        public Car(string id, CarClass carClass, string name, Color color, int maxSpeed, int doors)
+        public Car(string id, CarClass carClass, string name, int maxSpeed, int doors)
         {
             this.Id = id;
-            this.CarType = new CarType(carClass, name, color, maxSpeed, doors);
+            this.CarType = new CarType(carClass, name, maxSpeed, doors);
+        }
+
+        public override string ToString()
+        {
+            return $"{this.CarType.Name}: [Class]{CarType.Class}, [Doors]{CarType.Doors}, [MaxVelocity]{CarType.MaxSpeed}";
         }
 
     }

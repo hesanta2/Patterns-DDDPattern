@@ -11,7 +11,6 @@ namespace Domain
     {
         void Insert(T entity);
         void Delete(T entity);
-        IQueryable<T> Get(string key);
         IQueryable<T> Get(Expression<Func<T, bool>> predicate);
         IQueryable<T> GetAll();
         T Find(string id);

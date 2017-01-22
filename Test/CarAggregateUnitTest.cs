@@ -14,7 +14,7 @@ namespace Test
         [TestInitialize]
         public void Setup()
         {
-            this.car = new Car("1", CarClass.Normal, "Car", Color.White, 200, 5);
+            this.car = new Car("1", CarClass.Normal, "Car", 200, 5);
         }
 
         [TestMethod, TestCategory("Unit")]
@@ -33,7 +33,7 @@ namespace Test
         [ExpectedException(typeof(ArgumentNullException))]
         public void CarAggregate_Name_Is_Null_ThrowsException()
         {
-            Car nullNameCar = new Car("1", CarClass.Normal, null, Color.Gray, 240, 5);            
+            Car nullNameCar = new Car("1", CarClass.Normal, null, 240, 5);            
         }
 
         [TestMethod, TestCategory("Unit")]
