@@ -63,7 +63,6 @@
     <Compile Include="CarAggregateUnitTest.cs" />
     <Compile Include="CarServiceUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValueObjectUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj">

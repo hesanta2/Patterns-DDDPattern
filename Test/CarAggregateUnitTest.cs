@@ -35,11 +35,11 @@ namespace Test
             Car nullNameCar = new Car("1", CarClass.Normal, null, 240, 5);               
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void CarAggregate_CarType_Is_Typeof_ValueObject()
         {
             Assert.IsInstanceOfType(car.CarType, typeof(ValueObject<CarType>));
-        }
+        }*/
 
         [TestMethod]
         public void CarAggregate_ToString_IsNotNull()
