@@ -5,7 +5,7 @@ using Domain.Cars;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
 
-namespace Test
+namespace Domain.Test
 {
     [TestClass]
     public class CarServiceUnitTest

@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using Domain.Cars;
 
-namespace Test
+namespace Domain.Test
 {
     [TestClass]
     public class CarAggregateUnitTest
