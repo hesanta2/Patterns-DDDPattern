@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Domain.Cars;
 
-namespace Infraesctructure.Repositories
+namespace Infraesctructure.Persistence
 {
     public class CarMemoryRepository : ICarRepository
     {

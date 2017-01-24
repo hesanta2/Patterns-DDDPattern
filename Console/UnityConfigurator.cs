@@ -1,5 +1,5 @@
 ﻿using Domain.Cars;
-using Infraesctructure.Repositories;
+using Infraesctructure.Persistence;
 using Microsoft.Practices.Unity;
 
 namespace Console
