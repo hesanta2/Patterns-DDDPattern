@@ -7,8 +7,8 @@
     <ProjectGuid>{0F5FA6BB-7A32-4086-9F3D-591C614FC9B0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Infraesctructure</RootNamespace>
-    <AssemblyName>Infraesctructure</AssemblyName>
+    <RootNamespace>Infrasctructure</RootNamespace>
+    <AssemblyName>Infrasctructure</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

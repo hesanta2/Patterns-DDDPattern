@@ -69,9 +69,9 @@
       <Project>{3dd565c0-c3cd-4575-a74a-e64c0c2dcfde}</Project>
       <Name>Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Infraesctructure\Infraesctructure.csproj">
+    <ProjectReference Include="..\Infraesctructure\Infrasctructure.csproj">
       <Project>{0F5FA6BB-7A32-4086-9F3D-591C614FC9B0}</Project>
-      <Name>Infraesctructure</Name>
+      <Name>Infrasctructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
