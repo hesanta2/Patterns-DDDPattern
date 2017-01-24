@@ -19,9 +19,9 @@ namespace Test
             this.carRepository = MockRepository.GenerateMock<ICarRepository>();
             repositoryReturns = new List<Car>
             {
-                new Car("1", CarClass.Normal, "Car", 200, 5),
-                new Car("2", CarClass.Normal, "Car2", 200, 5),
-                new Car("3", CarClass.Normal, "Car3", 200, 5)
+                new Car(1, CarClass.Normal, "Car", 200, 5),
+                new Car(2, CarClass.Normal, "Car2", 200, 5),
+                new Car(3, CarClass.Normal, "Car3", 200, 5)
             }.AsQueryable();
         }
 
@@ -62,7 +62,7 @@ namespace Test
 
             new CarService(carRepository).Insert
             (
-                new Car("4", CarClass.Normal, "Car4", 200, 5)
+                new Car(4, CarClass.Normal, "Car4", 200, 5)
             );
 
             this.carRepository.VerifyAllExpectations();
@@ -73,7 +73,7 @@ namespace Test
         {
             this.carRepository.Expect(r => r.Delete(null)).IgnoreArguments();
             this.carRepository.Expect(r => r.Find(null)).IgnoreArguments()
-                .Return(new Car("3", CarClass.Normal, "Car3", 200, 5));
+                .Return(new Car(3, CarClass.Normal, "Car3", 200, 5));
 
             new CarService(carRepository).Delete("3");
 

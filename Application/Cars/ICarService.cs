@@ -8,6 +8,6 @@ namespace Application.Cars
         IQueryable<Car> GetAll();
         IQueryable<Car> GetByName(string name);
         void Insert(Car car);
-        void Delete(string readerLine);
+        void Delete(int id);
     }
 }

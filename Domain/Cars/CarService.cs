@@ -26,7 +26,7 @@ namespace Domain.Cars
             this.carRepository.Insert(car);
         }
 
-        public void Delete(string id)
+        public void Delete(object id)
         {
             Car car = this.carRepository.Find(id);
             if (car != null)

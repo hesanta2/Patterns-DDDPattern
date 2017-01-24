@@ -10,10 +10,10 @@ namespace Infraesctructure.Repositories
     {
         private List<Car> carMemoryList = new List<Car>()
         {
-            new Car("1", CarClass.Sport | CarClass.Competition, "Ferrari Formula One", 370, 0),
-            new Car("2", CarClass.Sport, "Audi R8", 335, 2),
-            new Car("4", CarClass.Normal | CarClass.Sport, "Seat Leon FR", 260, 5),
-            new Car("3", CarClass.Normal, "Seat Leon", 220, 5)
+            new Car(1, CarClass.Sport | CarClass.Competition, "Ferrari Formula One", 370, 0),
+            new Car(2, CarClass.Sport, "Audi R8", 335, 2),
+            new Car(4, CarClass.Normal | CarClass.Sport, "Seat Leon FR", 260, 5),
+            new Car(3, CarClass.Normal, "Seat Leon", 220, 5)
         };
 
         public void Insert(Car entity)
@@ -36,7 +36,7 @@ namespace Infraesctructure.Repositories
             return this.carMemoryList.AsQueryable();
         }
 
-        public Car Find(string id)
+        public Car Find(object id)
         {
             return this.carMemoryList.AsQueryable().FirstOrDefault(c => c.Id.Equals(id));
         }

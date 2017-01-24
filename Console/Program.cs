@@ -51,8 +51,7 @@ namespace Console
                             if (!string.IsNullOrWhiteSpace(readerLine)
                                 && readerLine.ToLower() != "exit")
                                 carService.Insert(
-                                                    new Car(null,
-                                                    (CarClass)random.Next(2),
+                                                    new Car((CarClass)random.Next(2),
                                                     readerLine,
                                                     random.Next(150, 370),
                                                     random.Next(0, 5))
@@ -62,9 +61,11 @@ namespace Console
                         case ConsoleKey.D3:
                             System.Console.Write("\nWrite the car Id to remove ('exit' to leave): ");
                             readerLine = System.Console.ReadLine();
+                            int readerLineID;
+                            int.TryParse(readerLine, out readerLineID);
                             if (!string.IsNullOrWhiteSpace(readerLine)
                                 && readerLine.ToLower() != "exit")
-                                carService.Delete(readerLine);
+                                carService.Delete(readerLineID);
                             cars = carService.GetAll();
                             break;
                     }

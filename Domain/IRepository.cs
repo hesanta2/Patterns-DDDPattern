@@ -10,6 +10,6 @@ namespace Domain
         void Delete(T entity);
         IQueryable<T> Get(Expression<Func<T, bool>> predicate);
         IQueryable<T> GetAll();
-        T Find(string id);
+        T Find(object id);
     }
 }

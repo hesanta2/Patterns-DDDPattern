@@ -21,9 +21,9 @@ namespace Application.Cars
 
         public void Insert(Car car)
         {
-            if (string.IsNullOrWhiteSpace(car.Id))
+            if (car.Id == -1)
                 car = new Car(
-                                (carService.GetAll().Count() + 1).ToString()
+                                (carService.GetAll().Count() + 1)
                                 , car.CarType.Class
                                 , car.CarType.Name
                                 , car.CarType.MaxSpeed
@@ -33,9 +33,9 @@ namespace Application.Cars
             this.carService.Insert(car);
         }
 
-        public void Delete(string readerLine)
+        public void Delete(int id)
         {
-            this.carService.Delete(readerLine);
+            this.carService.Delete(id);
         }
 
         public IQueryable<Car> GetAll()

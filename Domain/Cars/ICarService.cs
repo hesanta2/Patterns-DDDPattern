@@ -6,7 +6,7 @@ namespace Domain.Cars
     {
         IQueryable<Car> GetByName(string name);
         void Insert(Car car);
-        void Delete(string id);
+        void Delete(object id);
         IQueryable<Car> GetAll();
     }
 }
