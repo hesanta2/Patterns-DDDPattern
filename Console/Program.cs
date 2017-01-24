@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Domain.Cars;
-using Epreselec.Ats.API.Domain;
 using Microsoft.Practices.Unity;
 using ICarService = Application.Cars.ICarService;
 

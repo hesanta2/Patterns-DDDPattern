@@ -14,7 +14,7 @@ namespace Application.Cars
 
         public IQueryable<Car> GetByName(string name)
         {
-            IQueryable<Car> result = this.carService.GetByName(name);
+            var result = carService.GetByName(name);
 
             return result;
         }
@@ -23,24 +23,24 @@ namespace Application.Cars
         {
             if (car.Id == -1)
                 car = new Car(
-                                (carService.GetAll().Count() + 1)
-                                , car.CarType.Class
-                                , car.CarType.Name
-                                , car.CarType.MaxSpeed
-                                , car.CarType.Doors
-                            );
+                    carService.GetAll().Count() + 1
+                    , car.CarType.Class
+                    , car.CarType.Name
+                    , car.CarType.MaxSpeed
+                    , car.CarType.Doors
+                );
 
-            this.carService.Insert(car);
+            carService.Insert(car);
         }
 
         public void Delete(int id)
         {
-            this.carService.Delete(id);
+            carService.Delete(id);
         }
 
         public IQueryable<Car> GetAll()
         {
-            return this.carService.GetAll();
+            return carService.GetAll();
         }
     }
 }

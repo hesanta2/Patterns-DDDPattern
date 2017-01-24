@@ -2,7 +2,7 @@
 using Infraesctructure.Repositories;
 using Microsoft.Practices.Unity;
 
-namespace Epreselec.Ats.API.Domain
+namespace Console
 {
     public static class UnityConfigurator
     {
