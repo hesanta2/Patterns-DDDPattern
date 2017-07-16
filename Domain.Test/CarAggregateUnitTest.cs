@@ -2,9 +2,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Domain;
 using Domain.Cars;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Test
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class CarAggregateUnitTest
     {

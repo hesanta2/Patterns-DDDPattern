@@ -4,9 +4,11 @@ using Domain;
 using Domain.Cars;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhino.Mocks;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Test
 {
+    [ExcludeFromCodeCoverage]
     [TestClass]
     public class CarServiceUnitTest
     {
